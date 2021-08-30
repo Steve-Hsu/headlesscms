@@ -1,24 +1,32 @@
-import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Page_1 from './components/Page_1'
+import Page_2 from './components/Page_2'
+import { Fragment } from 'react';
+
+import NavbarState from './context/navbar/navbarState'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <NavbarState>
+      <Router>
+        <Fragment>
+          <Switch>
+            <Route
+              exact
+              path='/page_1'
+              component={Page_1}
+            />
+            <Route
+              exact
+              path='/page_2'
+              component={Page_2}
+            />
+            <Route component={Page_1} />
+          </Switch>
+        </Fragment>
+      </Router>
+    </NavbarState>
   );
 }
 
