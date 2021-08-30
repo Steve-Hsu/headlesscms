@@ -1,1 +1,2 @@
 export const GET_NAVBAR_TITLES = 'GET_NAVBAR_TITLES';
+
