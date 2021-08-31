@@ -1,4 +1,4 @@
-// import axios from 'axios';
+import axios from 'axios';
 import React, { useReducer } from 'react';
 import PDataContext from './pDataContext';
 import pDataReducer from './pDataReducer';
@@ -17,26 +17,15 @@ const PDataState = (props) => {
   const { pData, dataName } = state;
 
   const getPData = async (name) => {
-    let data;
+    // let data;
     if (!name) return;
-    // https://github.com/Bounteous-Inc/headless-cms-assessment/blob/main/books.json
-    // const JSON = await axios.get(`https://github.com/Bounteous-Inc/headless-cms-assessment/blob/main/${name.toLowerCase()}.json`);
-    // const JSON = await axios.get(`https://github.com/Bounteous-Inc/headless-cms-assessment/blob/main/books.json`);
-    // const JSON = await axios.get(__dirname + 'books.json');
-    switch (name) {
-      case 'Books':
-        data = books;
-        break;
-      case 'Bios':
-        data = bios;
-        break;
-      default:
-    }
+    if (name === 'default_1' || name === 'default_2') return;
+    const JSON = await axios.get(`https://raw.githubusercontent.com/Bounteous-Inc/headless-cms-assessment/main/${name.toLowerCase()}.json`);
 
-    if (!data) {
+    if (!JSON) {
       return dispatch({ type: GET_JSON_DATA, payload: [name, 'empty'] });
     }
-    return dispatch({ type: GET_JSON_DATA, payload: [name, data] });
+    return dispatch({ type: GET_JSON_DATA, payload: [name, JSON] });
   }
 
 
