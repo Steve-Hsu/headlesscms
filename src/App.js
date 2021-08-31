@@ -1,13 +1,16 @@
 import './App.css';
 import ReactRouter from './components/ReactRouter'
 import NavbarState from './context/navbar/navbarState';
+import PDataState from './context/pageData/pDataState';
 
 
 function App() {
 
   return (
     <NavbarState>
-      <ReactRouter />
+      <PDataState>
+        <ReactRouter />
+      </PDataState>
     </NavbarState>
   );
 }

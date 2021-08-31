@@ -29,9 +29,9 @@ const NavbarState = (props) => {
   return (
     <NavbarContext.Provider
       value={{
-        route_1: route_1,
-        route_2: route_2,
-        didGetRoutes: didGetRoutes,
+        route_1,
+        route_2,
+        didGetRoutes,
         getRouteName
       }}
     >
