@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Page_1 from './Page_1';
-import Page_2 from './Page_2';
+import Page_1 from './page_1/Page_1';
+import Page_2 from './page_2/Page_2';
 import NavbarContext from '../context/navbar/navbarContext';
 
 

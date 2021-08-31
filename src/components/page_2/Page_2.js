@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from 'react';
-import Navbar from './Navbar'
-import NavbarContext from '../context/navbar/navbarContext';
-import PDataContext from '../context/pageData/pDataContext';
+import Navbar from '../Navbar';
+import NavbarContext from '../../context/navbar/navbarContext';
+import PDataContext from '../../context/pageData/pDataContext';
 
 
 const Page_2 = () => {
