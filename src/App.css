@@ -2327,3 +2327,8 @@ div.landscape {
 .test-5 {
   background: slateblue;
 }
+
+/* Custom class style for this project */
+.book-list {
+  margin-bottom: 1rem;
+}

@@ -21,13 +21,12 @@ const Page_1 = ({ props }) => {
   })
 
   return (
-    <div>
+    <>
       <Navbar />
-      <div className='container container-with-navbar' >
-        Hello World here is page_1
+      <div className='container container-with-navbar'>
         <DisplayComponents data={data} />
       </div>
-    </div>
+    </>
   )
 }
 

@@ -18,13 +18,12 @@ const Page_2 = () => {
     console.log('page_1')
   })
   return (
-    <div>
+    <>
       <Navbar />
       <div className='container container-with-navbar'>
-        Hello World here is page_2
         <DisplayComponents data={data} />
       </div>
-    </div>
+    </>
   )
 }
 

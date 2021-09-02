@@ -43,10 +43,17 @@ const DisplayComponents = ({ data }) => {
       console.log("the Object inserted", obj)
 
       const { alt, className, src, style, text, texttype, type, items } = obj
+      // return (
+      //   <div className={className} style={style} >
+      //     {text !== '' ? (<td dangerouslySetInnerHTML={{ __html: text }} />) : null}
+      //     {src !== '' ? (<img src={src} alt={alt} />) : null}
+      //     {items.length !== 0 ? readArr(items, 'otherlevel') : null}
+      //   </div>
+      // )
       return (
-        <div className={className} style={style} >
+        <div className={className} style={style}>
           {text !== '' ? (<td dangerouslySetInnerHTML={{ __html: text }} />) : null}
-          {src !== '' ? (<img src={src} alt={alt} />) : null}
+          {src !== '' ? (<img className={className} style={style} src={src} alt={alt} />) : null}
           {items.length !== 0 ? readArr(items, 'otherlevel') : null}
         </div>
       )
