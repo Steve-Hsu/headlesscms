@@ -2,7 +2,7 @@ import React, { useContext, useEffect } from 'react';
 import Navbar from '../Navbar';
 import NavbarContext from '../../context/navbar/navbarContext';
 import PDataContext from '../../context/pageData/pDataContext';
-import Container_A from './container_A'
+import DisplayComponents from '../displayComponents'
 
 
 const Page_1 = ({ props }) => {
@@ -10,6 +10,7 @@ const Page_1 = ({ props }) => {
   const pDataContext = useContext(PDataContext);
   const { route_1 } = navbarContext
   const { dataName, getPData, pData } = pDataContext;
+  const data = pData || [{ data: "empty" }];
 
 
   useEffect(() => {
@@ -19,13 +20,12 @@ const Page_1 = ({ props }) => {
     console.log('page_1')
   })
 
-
   return (
     <div>
       <Navbar />
       <div className='container container-with-navbar' >
         Hello World here is page_1
-        <Container_A />
+        <DisplayComponents data={data} />
       </div>
     </div>
   )
